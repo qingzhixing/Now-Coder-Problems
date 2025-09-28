@@ -1,4 +1,4 @@
-// TODO: Wrong Code
+// TODO: Wrong Code 50
 #include <iostream>
 using namespace std;
 
@@ -34,16 +34,14 @@ int main()
 
 	for (int i = 1; i <= n; i++)
 	{
-		for (int j = i + 1; j <= n; j++)
+		for (int j = 1; j <= n; j++)
 		{
-			if (is_good_number(num_array[i], num_array[j]))
+			if (i != j && is_good_number(num_array[i], num_array[j]))
 			{
 				answer++;
 			}
 		}
 	}
-
-	// 正反各自算一次
-	cout << answer * 2 << endl;
+	cout << answer;
 	return 0;
 }
