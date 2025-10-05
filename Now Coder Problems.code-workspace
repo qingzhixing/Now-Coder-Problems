@@ -53,7 +53,21 @@
 			"cstdint": "cpp",
 			"cwctype": "cpp",
 			"ios": "cpp",
-			"queue": "cpp"
+			"queue": "cpp",
+			"format": "cpp",
+			"xloctime": "cpp",
+			"charconv": "cpp",
+			"xutility": "cpp",
+			"xiosbase": "cpp",
+			"xlocale": "cpp",
+			"xlocbuf": "cpp",
+			"xlocinfo": "cpp",
+			"xlocmes": "cpp",
+			"xlocmon": "cpp",
+			"xlocnum": "cpp",
+			"xmemory": "cpp",
+			"xstring": "cpp",
+			"xtr1common": "cpp"
 		}
 	}
 }
