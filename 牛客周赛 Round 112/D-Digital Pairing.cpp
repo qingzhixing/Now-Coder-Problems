@@ -10,7 +10,7 @@ int bit_count[100];
 
 void handle_bits(long long value)
 {
-	int current_bit = 1;
+	int current_bit = 0;
 	while (value)
 	{
 		if (value & 1)
@@ -29,6 +29,7 @@ void Solution()
 	for (int index = 1; index <= 2 * n; index++)
 	{
 		cin >> nums[index];
+		handle_bits(nums[index]);
 	}
 
 	sort(nums + 1, nums + 1 + n);
@@ -41,7 +42,7 @@ void Solution()
 
 	// 跟bit统计对比
 	long long bit_value;
-	for (int bit_index = 1; bit_index <= sizeof(long long) * 8; bit_index++)
+	for (int bit_index = 0; bit_index <= sizeof(long long) * 8; bit_index++)
 	{
 		bit_value = 1 << bit_index;
 		if (bit_count[bit_index] >= n)
