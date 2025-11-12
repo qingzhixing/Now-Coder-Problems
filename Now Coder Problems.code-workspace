@@ -69,7 +69,12 @@
 			"xmemory": "cpp",
 			"xstring": "cpp",
 			"xtr1common": "cpp",
-			"cstring": "cpp"
+			"cstring": "cpp",
+			"compare": "cpp",
+			"concepts": "cpp",
+			"ctime": "cpp",
+			"locale": "cpp",
+			"xfacet": "cpp"
 		}
 	}
 }
