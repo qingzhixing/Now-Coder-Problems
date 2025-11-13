@@ -1,4 +1,3 @@
-// WA
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -14,7 +13,7 @@ int main()
 
 	double single_edge_length = 2 * r * sin(PI / n);
 
-	double edges = abs(i - j);
+	double edges = min(abs(i - j), int(n - abs(i - j)));
 
 	printf("%.6f\n", edges * single_edge_length);
 
