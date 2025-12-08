@@ -1,30 +1,8 @@
 #include <iostream>
 #include <string>
-using std::cin;
-using std::cout;
-using std::endl;
-using std::string;
+using namespace std;
 
 const int MOD = 998244353;
-
-long long A(int bottom, int top)
-{
-	if (top > bottom)
-		return 0;
-	long long sum = 1;
-	for (int i = 0; i < top; i++)
-	{
-		sum = sum * (bottom - i) % MOD;
-	}
-	return sum;
-}
-
-long long C(int bottom, int top)
-{
-	if (top > bottom)
-		return 0;
-	return (A(bottom, top) % MOD) / (A(top, top) % MOD);
-}
 
 int main()
 {
@@ -32,21 +10,31 @@ int main()
 	string str;
 	cin >> n >> str;
 
-	int different_char_count = 0;
-	int checked[30] = {};
-
+	long long cnt[30]{};
 	for (auto ch : str)
 	{
-		if (!checked[ch - 'a'])
-			different_char_count++;
-		checked[ch - 'a']++;
+		cnt[ch - 'a']++;
 	}
-	long long result = (1LL * C(different_char_count, 3) * A(3, 3)) % MOD;
-	for (int i = 0; i < 26; i++)
+
+	long long result{};
+
+	// 枚举字符排列情况
+	for (int c1 = 0; c1 < 26; c1++)
 	{
-		if (checked[i])
-			result = result * checked[i] % MOD;
+		for (int c2 = 0; c2 < 26; c2++)
+		{
+			for (int c3 = 0; c3 < 26; c3++)
+			{
+				if (c1 != c2 && c2 != c3 && c1 != c3)
+				{
+					result += (cnt[c1] * cnt[c2] * cnt[c3]) % MOD;
+					result %= MOD;
+				}
+			}
+		}
 	}
-	cout << result % MOD << endl;
+
+	cout << result << endl;
+
 	return 0;
 }
