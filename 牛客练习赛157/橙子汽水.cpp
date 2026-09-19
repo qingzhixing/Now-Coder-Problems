@@ -1,13 +1,19 @@
 #include <iostream>
 using namespace std;
 
-#error TODO: Uncomplemented.
-
-const int MAX_N = 0;
-const int MAX_M = 0;
-
 void Solution()
 {
+	int a, b;
+	cin >> a >> b;
+	int mod = ((a - b) % 6 + 6) % 6;
+	if (mod == 0 || mod == 1 || mod == 5)
+	{
+		cout << "Bob" << endl;
+	}
+	else
+	{
+		cout << "Alice" << endl;
+	}
 }
 
 int main()
